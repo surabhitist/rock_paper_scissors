@@ -77,8 +77,16 @@ body {
   transform: translateX(500px);
 }
 
+.move-right-back {
+  transform: translateX(-1px);
+}
+
 .move-left {
   transform: translateX(-500px);
+}
+
+.move-left-back {
+  transform: translateX(1px);
 }
 
 .score {

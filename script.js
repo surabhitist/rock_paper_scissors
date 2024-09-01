@@ -13,6 +13,9 @@ function click_rock() {
   const ct_img = document.getElementById("image4");
   const pt_img = document.getElementById("image3");
 
+  c_img.style.opacity = "100";
+  rock_img.style.opacity = "100";
+
   if (num == 2) {
     setTimeout(() => {
       if (a == 3) {
@@ -22,6 +25,10 @@ function click_rock() {
         ct_img.src = "images/trophy.png";
         ct_img.style.display = "block";
       } else {
+        // c_img.style.visibility = "hidden";
+        // c_img.style.opacity = "0";
+        c_img.classList.add("move-left-back");
+        resetPosition();
         rock_img.style.display = "none";
         c_img.style.display = "none";
         div_choose.style.display = "block";
@@ -37,6 +44,10 @@ function click_rock() {
         pt_img.src = "images/trophy.png";
         pt_img.style.display = "block";
       } else {
+        // rock_img.style.visibility = "hidden";
+        // rock_img.style.opacity = "0";
+        rock_img.classList.add("move-right-back");
+        resetPosition();
         rock_img.style.display = "none";
         c_img.style.display = "none";
         div_choose.style.display = "block";
@@ -45,6 +56,7 @@ function click_rock() {
     let b = move_r();
   } else {
     setTimeout(() => {
+      resetPosition();
       rock_img.style.display = "none";
       c_img.style.display = "none";
       div_choose.style.display = "block";
@@ -52,90 +64,137 @@ function click_rock() {
   }
 }
 
-// function click_paper() {
-//   document.getElementById("choose_div").style.display = "none";
-//   const div_rock = document.getElementById("choose_div");
-//   div_rock.style.display = "none";
+function click_paper() {
+  const div_choose = document.getElementById("choose_div");
+  div_choose.style.display = "none";
 
-//   const new_div = document.createElement("div");
+  const rock_img = document.getElementById("image1");
+  rock_img.src = "images/paper.png";
+  rock_img.style.width = "420px";
+  rock_img.style.display = "block";
 
-//   const rock_img = document.createElement("img");
-//   rock_img.id = "image1";
-//   rock_img.src = "images/paper.png";
-//   rock_img.style.width = "420px";
+  const num = computer();
 
-//   new_div.appendChild(rock_img);
+  const c_img = document.getElementById("image2");
+  const ct_img = document.getElementById("image4");
+  const pt_img = document.getElementById("image3");
 
-//   const div_rock_new = document.getElementById("div_rock_new");
-//   div_rock_new.appendChild(new_div);
-//   const num = computer();
+  c_img.style.opacity = "100";
+  rock_img.style.opacity = "100";
 
-//   const c_img = document.getElementById("image2");
+  if (num == 1) {
+    setTimeout(() => {
+      if (a == 3) {
+        rock_img.style.display = "none";
+        c_img.style.display = "none";
+        // c_img.src = "images/trophy.png";
+        pt_img.src = "images/trophy.png";
+        pt_img.style.display = "block";
+      } else {
+        // c_img.style.visibility = "hidden";
+        // c_img.style.opacity = "0";
+        c_img.classList.add("move-right-back");
+        resetPosition();
+        rock_img.style.display = "none";
+        c_img.style.display = "none";
+        div_choose.style.display = "block";
+      }
+    }, 3000);
+    let a = move_r();
+  } else if (num == 3) {
+    setTimeout(() => {
+      if (b == 3) {
+        rock_img.style.display = "none";
+        c_img.style.display = "none";
+        // rock_img.src = "images/trophy.png";
+        ct_img.src = "images/trophy.png";
+        ct_img.style.display = "block";
+      } else {
+        // rock_img.style.visibility = "hidden";
+        // rock_img.style.opacity = "0";
+        rock_img.classList.add("move-left-back");
+        resetPosition();
+        rock_img.style.display = "none";
+        c_img.style.display = "none";
+        div_choose.style.display = "block";
+      }
+    }, 3000);
+    let b = move_l();
+  } else {
+    setTimeout(() => {
+      resetPosition();
+      rock_img.style.display = "none";
+      c_img.style.display = "none";
+      div_choose.style.display = "block";
+    }, 1000);
+  }
+}
 
-//   if (num == 1) {
-//     setTimeout(() => {
-//       new_div.style.display = "none";
-//       c_img.style.display = "none";
-//       div_rock.style.display = "block";
-//     }, 3000);
-//     move_r();
-//   } else if (num == 3) {
-//     setTimeout(() => {
-//       new_div.style.display = "none";
-//       c_img.style.display = "none";
-//       div_rock.style.display = "block";
-//     }, 3000);
-//     move_l();
-//   } else {
-//     setTimeout(() => {
-//       new_div.style.display = "none";
-//       c_img.style.display = "none";
-//       div_rock.style.display = "block";
-//     }, 1000);
-//   }
-// }
+function click_scissors() {
+  const div_choose = document.getElementById("choose_div");
+  div_choose.style.display = "none";
 
-// function click_scissors() {
-//   document.getElementById("choose_div").style.display = "none";
-//   const div_rock = document.getElementById("choose_div");
-//   div_rock.style.display = "none";
+  const rock_img = document.getElementById("image1");
+  rock_img.src = "images/scissors.png";
+  rock_img.style.width = "420px";
+  rock_img.style.display = "block";
 
-//   const new_div = document.createElement("div");
+  const num = computer();
 
-//   const rock_img = document.createElement("img");
-//   rock_img.id = "image1";
-//   rock_img.src = "images/scissors.png";
-//   rock_img.style.width = "420px";
+  const c_img = document.getElementById("image2");
+  const ct_img = document.getElementById("image4");
+  const pt_img = document.getElementById("image3");
 
-//   new_div.appendChild(rock_img);
+  c_img.style.opacity = "100";
+  rock_img.style.opacity = "100";
 
-//   const div_rock_new = document.getElementById("div_rock_new");
-//   div_rock_new.appendChild(new_div);
-//   const num = computer();
-
-//   const c_img = document.getElementById("image2");
-
-//   if (num == 1) {
-//     setTimeout(() => {
-//       new_div.style.display = "none";
-//       c_img.style.display = "none";
-//     }, 3000);
-//     let n = move_l();
-//   } else if (num == 2) {
-//     setTimeout(() => {
-//       new_div.style.display = "none";
-//       c_img.style.display = "none";
-//       div_rock.style.display = "block";
-//     }, 3000);
-//     let m = move_r();
-//   } else {
-//     setTimeout(() => {
-//       new_div.style.display = "none";
-//       c_img.style.display = "none";
-//       div_rock.style.display = "block";
-//     }, 1000);
-//   }
-// }
+  if (num == 1) {
+    setTimeout(() => {
+      if (a == 3) {
+        rock_img.style.display = "none";
+        c_img.style.display = "none";
+        // c_img.src = "images/trophy.png";
+        ct_img.src = "images/trophy.png";
+        ct_img.style.display = "block";
+      } else {
+        // c_img.style.visibility = "hidden";
+        // c_img.style.opacity = "0";
+        c_img.classList.add("move-left-back");
+        resetPosition();
+        rock_img.style.display = "none";
+        c_img.style.display = "none";
+        div_choose.style.display = "block";
+      }
+    }, 3000);
+    let a = move_l();
+  } else if (num == 2) {
+    setTimeout(() => {
+      if (b == 3) {
+        rock_img.style.display = "none";
+        c_img.style.display = "none";
+        // rock_img.src = "images/trophy.png";
+        pt_img.src = "images/trophy.png";
+        pt_img.style.display = "block";
+      } else {
+        // rock_img.style.visibility = "hidden";
+        // rock_img.style.opacity = "0";
+        rock_img.classList.add("move-right-back");
+        resetPosition();
+        rock_img.style.display = "none";
+        c_img.style.display = "none";
+        div_choose.style.display = "block";
+      }
+    }, 3000);
+    let b = move_r();
+  } else {
+    setTimeout(() => {
+      resetPosition();
+      rock_img.style.display = "none";
+      c_img.style.display = "none";
+      div_choose.style.display = "block";
+    }, 1000);
+  }
+}
 
 function computer() {
   const randomNumber = Math.floor(Math.random() * 3) + 1;
@@ -155,7 +214,10 @@ function computer() {
 
 function move_r() {
   const image1 = document.getElementById("image1");
+  const image2 = document.getElementById("image2");
   image1.style.zIndex = 100;
+  image2.style.zIndex = 99;
+
   setTimeout(() => {
     image1.classList.add("move-right");
   }, 1000);
@@ -168,7 +230,10 @@ function move_r() {
 }
 
 function move_l() {
+  const image1 = document.getElementById("image1");
   const image2 = document.getElementById("image2");
+  image1.style.zIndex = 99;
+  image2.style.zIndex = 100;
   setTimeout(() => {
     image2.classList.add("move-left");
   }, 1000);
@@ -184,10 +249,8 @@ function resetPosition() {
   const image1 = document.getElementById("image1");
   const image2 = document.getElementById("image2");
 
-  // Remove the classes and reset transform
   image1.classList.remove("move-right");
   image2.classList.remove("move-left");
-
-  image1.style.transform = "translateX(0)";
-  image2.style.transform = "translateX(0)";
+  image1.classList.remove("move-right-back");
+  image2.classList.remove("move-left-back");
 }
