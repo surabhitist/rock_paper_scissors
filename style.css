@@ -1,0 +1,100 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.main_heading {
+  font-weight: 700;
+  text-align: center;
+  color: black;
+  padding-top: 20px;
+}
+
+.main_div {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.div_me {
+  width: 500px;
+  height: 500px;
+  background-color: antiquewhite;
+  text-align: center;
+  padding-top: 7.8px;
+}
+
+.div_computer {
+  width: 500px;
+  height: 500px;
+  background-color: rgb(252, 224, 186);
+}
+
+.rock_paper_scissors {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.rock {
+  padding-right: 20px;
+}
+
+.paper {
+  padding-right: 20px;
+}
+
+.choose {
+  padding-top: 100px;
+}
+
+.div_computer {
+  text-align: center;
+}
+
+#image1 {
+  position: absolute;
+  left: 300px;
+}
+
+#image2 {
+  position: absolute;
+  left: 820px;
+  transition: transform 1s ease-in-out;
+}
+
+#image3 {
+  width: 400px;
+  margin-left: 60px;
+}
+
+#image4 {
+  width: 400px;
+  margin-left: 60px;
+}
+
+.move-right {
+  transition: transform 1s ease;
+  transform: translateX(500px); /* Adjust distance as needed */
+}
+
+.move-left {
+  transition: transform 1s ease;
+  transform: translateX(-500px); /* Adjust distance as needed */
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+}
+
+#my_score {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+#computer_score {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+}
