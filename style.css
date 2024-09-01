@@ -54,6 +54,7 @@ body {
 #image1 {
   position: absolute;
   left: 300px;
+  transition: transform 1s ease-in-out;
 }
 
 #image2 {
@@ -73,13 +74,11 @@ body {
 }
 
 .move-right {
-  transition: transform 1s ease;
-  transform: translateX(500px); /* Adjust distance as needed */
+  transform: translateX(500px);
 }
 
 .move-left {
-  transition: transform 1s ease;
-  transform: translateX(-500px); /* Adjust distance as needed */
+  transform: translateX(-500px);
 }
 
 .score {

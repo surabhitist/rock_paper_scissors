@@ -1,5 +1,3 @@
-// const g_flag = 0;
-
 function click_rock() {
   const div_choose = document.getElementById("choose_div");
   div_choose.style.display = "none";
@@ -28,7 +26,7 @@ function click_rock() {
         c_img.style.display = "none";
         div_choose.style.display = "block";
       }
-    }, 1000);
+    }, 3000);
     let a = move_l();
   } else if (num == 3) {
     setTimeout(() => {
@@ -43,7 +41,7 @@ function click_rock() {
         c_img.style.display = "none";
         div_choose.style.display = "block";
       }
-    }, 1000);
+    }, 3000);
     let b = move_r();
   } else {
     setTimeout(() => {
@@ -156,12 +154,12 @@ function computer() {
 }
 
 function move_r() {
-  // const image1 = document.getElementById("image1");
-  // image1.style.zIndex = 100;
-  // setTimeout(() => {
-  //   const image1 = document.getElementById("image1");
-  //   image1.classList.add("move-right");
-  // }, 1000);
+  const image1 = document.getElementById("image1");
+  image1.style.zIndex = 100;
+  setTimeout(() => {
+    image1.classList.add("move-right");
+  }, 1000);
+
   let me = document.getElementById("my_value").innerText;
   let m = parseInt(me, 10);
   m = m + 1;
@@ -170,11 +168,11 @@ function move_r() {
 }
 
 function move_l() {
-  // const image2 = document.getElementById("image2");
-  // setTimeout(() => {
-  //   const image2 = document.getElementById("image2");
-  //   image2.classList.add("move-left");
-  // }, 1000);
+  const image2 = document.getElementById("image2");
+  setTimeout(() => {
+    image2.classList.add("move-left");
+  }, 1000);
+
   let comp = document.getElementById("c_value").innerText;
   let n = parseInt(comp, 10);
   n = n + 1;
